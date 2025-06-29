@@ -5,7 +5,7 @@ Welcome, Copilot! Please follow these guidelines when contributing code to this 
 ## Style Guide
 
 - **Modules:** Use ES Modules (`.js` with `export`/`import`) for all files.
-- **Formatting:** 
+- **Formatting:**
   - 2 spaces for indentation
   - Use semicolons at the end of statements
   - Single quotes for strings

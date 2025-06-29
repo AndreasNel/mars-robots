@@ -10,17 +10,20 @@ This is a simple Node.js project using ECMAScript Modules (ESM).
 ## Getting Started
 
 1. **Clone the repository:**
+
    ```sh
    git clone https://github.com/AndreasNel/mars-robots.git
    cd mars-robots
    ```
 
 2. **Install dependencies & setup Git hooks:**
+
    ```sh
    npm install && npx husky init
    ```
 
 3. **Run the app:**
+
    ```sh
    npm start
    ```
