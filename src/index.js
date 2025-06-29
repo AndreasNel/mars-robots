@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import { pathToFileURL } from "url";
-import Robot from "./models/robot";
-import World from "./models/world";
-import processCommandString from "./services/process-command-string";
+import Robot from "./models/robot.js";
+import World from "./models/world.js";
+import processCommandString from "./services/process-command-string.js";
 
 function processRobots(input) {
   const [boundingBox, ...rows] = input.split("\n");

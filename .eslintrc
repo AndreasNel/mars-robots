@@ -3,10 +3,13 @@
   "env": {
     "browser": false,
     "node": true,
-    "jest": true
+    "jest": true,
   },
   "parserOptions": {
     "ecmaVersion": 2024,
-    "sourceType": "module"
-  }
+    "sourceType": "module",
+  },
+  "rules": {
+    "import/extensions": ["error", "ignorePackages"],
+  },
 }

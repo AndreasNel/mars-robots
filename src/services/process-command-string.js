@@ -1,11 +1,11 @@
-import MoveForwardCommand from "../models/commands/move-forward-command";
-import TurnLeftCommand from "../models/commands/turn-left-command";
-import TurnRightCommand from "../models/commands/turn-right-command";
+import MoveForwardCommand from "../models/commands/move-forward-command.js";
+import TurnLeftCommand from "../models/commands/turn-left-command.js";
+import TurnRightCommand from "../models/commands/turn-right-command.js";
 
 export default function processCommandString(robot, commandString, world) {
   let finalPosition = robot.toString();
   let isRobotPositionValid = true;
-  commandString.forEach((commandChar) => {
+  commandString.split("").forEach((commandChar) => {
     if (
       !isRobotPositionValid ||
       !world.isSafeCommand(commandChar, robot.toString())
