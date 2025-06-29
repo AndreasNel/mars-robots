@@ -16,10 +16,10 @@ This is a simple Node.js project using ECMAScript Modules (ESM).
    cd mars-robots
    ```
 
-2. **Install dependencies & setup Git hooks:**
+2. **Install dependencies:**
 
    ```sh
-   npm install && npx husky init
+   npm install
    ```
 
 3. **Run the app:**

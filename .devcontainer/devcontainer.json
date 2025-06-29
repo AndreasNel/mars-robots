@@ -14,5 +14,5 @@
       ]
     }
   },
-  "postCreateCommand": "npm install & npx husky init"
+  "postCreateCommand": "npm install"
 }
