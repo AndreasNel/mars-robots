@@ -1,28 +1,19 @@
-import MoveForwardCommand from "../models/commands/move-forward-command.js";
-import TurnLeftCommand from "../models/commands/turn-left-command.js";
-import TurnRightCommand from "../models/commands/turn-right-command.js";
+import CommandFactory from "../models/commands/factory.js";
 
 export default function processCommandString(robot, commandString, world) {
   let finalPosition = robot.toString();
   let isRobotPositionValid = true;
   commandString.split("").forEach((commandChar) => {
     if (
-      !isRobotPositionValid ||
-      !world.isSafeCommand(commandChar, robot.toString())
+      !(
+        isRobotPositionValid &&
+        world.isSafeCommand(commandChar, robot.toString())
+      )
     ) {
       return;
     }
 
-    let command;
-    if (commandChar === "F") {
-      command = new MoveForwardCommand(robot, world);
-    } else if (commandChar === "L") {
-      command = new TurnLeftCommand(robot, world);
-    } else if (commandChar === "R") {
-      command = new TurnRightCommand(robot, world);
-    } else {
-      throw new Error(`Unknown command: ${commandChar}`);
-    }
+    const command = CommandFactory.createCommand(commandChar, robot, world);
     isRobotPositionValid = command.execute();
 
     if (isRobotPositionValid) {
