@@ -9,7 +9,6 @@ function processRobots(input) {
   const filteredRows = rows.filter((row) => row.trim() !== "");
 
   const world = World.createFromBoundingBox(boundingBox);
-  console.log({ world });
 
   // Iterate through the rows 2 at a time. The first row is the robot position, the second row is the commands.
   for (let i = 0; i < filteredRows.length; i += 2) {
@@ -17,9 +16,8 @@ function processRobots(input) {
     const commandString = filteredRows[i + 1].trim();
 
     const robot = Robot.createFromPosition(position);
-    console.log({ robot });
     const result = processCommandString(robot, commandString, world);
-    console.log({ result });
+    console.log(result);
   }
 }
 
