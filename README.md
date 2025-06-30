@@ -38,6 +38,7 @@ Similar subsequent commands that would result in other robots getting lost are a
 
 - [Node.js](https://nodejs.org/) v22+ (with ESM support)
 - [npm](https://www.npmjs.com/)
+- [Docker](https://www.docker.com/) - if running with Dev Containers.
 
 ## Getting Started
 
@@ -69,6 +70,8 @@ Similar subsequent commands that would result in other robots getting lost are a
 - `src/` – Source code
 - `.github/` – GitHub configs and Copilot instructions
 - `.devcontainer/` – Codespaces configuration
+- `test/` - Automated Jest unit tests
+- `.husky/` - Git hooks
 
 ## Notes
 
