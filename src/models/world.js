@@ -6,11 +6,21 @@ export default class World {
   #blacklist = new Set();
 
   constructor(xMax, yMax) {
-    this.#xMax = xMax;
-    this.#yMax = yMax;
+    // Adding type checking here because everything in the world derives their state from the world setup.
+    // Having a broken world has a cascading effect on all robots and commands.
+    if (
+      typeof xMax !== "number" ||
+      typeof yMax !== "number" ||
+      Number.isNaN(xMax) ||
+      Number.isNaN(yMax)
+    ) {
+      throw new Error("World dimensions must be valid numbers.");
+    }
     if (xMax < 0 || yMax < 0) {
       throw new Error("World dimensions must be non-negative.");
     }
+    this.#xMax = xMax;
+    this.#yMax = yMax;
   }
 
   isValidPosition(x, y) {

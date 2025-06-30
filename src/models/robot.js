@@ -6,6 +6,7 @@ export default class Robot {
   orientation;
 
   constructor(x, y, orientation) {
+    // Not adding type checking here because we're OK with losing robots due to bad configuration/commands.
     this.x = x;
     this.y = y;
     this.orientation = orientation;

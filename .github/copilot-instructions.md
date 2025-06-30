@@ -14,7 +14,6 @@ Welcome, Copilot! Please follow these guidelines when contributing code to this 
   - Classes: `PascalCase`
   - Constants: `UPPER_CASE`
 - **Comments:**
-  - Use JSDoc for function and class documentation
   - Write clear, concise comments for complex code blocks
 - **Best Practices:**
   - Prefer `const` and `let` over `var`

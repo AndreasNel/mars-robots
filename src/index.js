@@ -2,7 +2,6 @@
 import { readFile } from "fs/promises";
 import processRobotsInstructionSet from "./services/process-robots-instruction-set.js";
 
-// Read the file path from command line arguments if provided, otherwise print help text.
 const input = process.argv[2];
 if (!input) {
   console.log("Usage: node src/index.js <file-path>");
