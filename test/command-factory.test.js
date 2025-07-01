@@ -6,32 +6,22 @@ import TurnRightCommand from "../src/models/commands/turn-right-command.js";
 class MockRobot {}
 class MockWorld {}
 
+const COMMANDS = [
+  { symbol: "F", expectedClass: MoveForwardCommand },
+  { symbol: "L", expectedClass: TurnLeftCommand },
+  { symbol: "R", expectedClass: TurnRightCommand },
+];
+
 describe("CommandFactory", () => {
-  it("should create MoveForwardCommand for F", () => {
-    const cmd = CommandFactory.createCommand(
-      "F",
-      new MockRobot(),
-      new MockWorld(),
-    );
-    expect(cmd).toBeInstanceOf(MoveForwardCommand);
-  });
-
-  it("should create TurnLeftCommand for L", () => {
-    const cmd = CommandFactory.createCommand(
-      "L",
-      new MockRobot(),
-      new MockWorld(),
-    );
-    expect(cmd).toBeInstanceOf(TurnLeftCommand);
-  });
-
-  it("should create TurnRightCommand for R", () => {
-    const cmd = CommandFactory.createCommand(
-      "R",
-      new MockRobot(),
-      new MockWorld(),
-    );
-    expect(cmd).toBeInstanceOf(TurnRightCommand);
+  COMMANDS.forEach(({ symbol, expectedClass }) => {
+    it(`should create ${expectedClass.name} for ${symbol}`, () => {
+      const cmd = CommandFactory.createCommand(
+        symbol,
+        new MockRobot(),
+        new MockWorld(),
+      );
+      expect(cmd).toBeInstanceOf(expectedClass);
+    });
   });
 
   it("should throw for unknown command", () => {
